@@ -46,4 +46,4 @@
 
 16. Hər html faylına {% load static%} əlavə edirik və düzəldirik.
 
-<!-- sonuncu defe indeks faylini duzeltdim -->
+<!-- sonuncu defe index.html ve contact.html faylini duzeltdim -->
