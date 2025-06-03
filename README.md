@@ -42,4 +42,8 @@
 
 14. Hər app(tətbiqin) özünə görə urls.py faylını və templates qovluğunu yaradıb settings.py-da əlaqələndiririk.
 
-15. MEDIA_URL və STATIC_URL fayllarının lazımi konfiqurasiyasını setting.py-a əlavə edirik
+15. MEDIA_URL və STATIC_URL fayllarının lazımi konfiqurasiyasını setting.py-a əlavə edirik.
+
+16. Hər html faylına {% load static%} əlavə edirik və düzəldirik.
+
+<!-- sonuncu defe indeks faylini duzeltdim -->
