@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -9,12 +11,12 @@
   <meta name="author" content="Laralink">
   <!-- Site Title -->
   <title>Comming Soon | E-commerce</title>
-  <link rel="stylesheet" href="../assets/css/plugins/fontawesome.min.css">
-  <link rel="stylesheet" href="../assets/css/plugins/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/plugins/animate.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="{% static '../static/css/plugins/fontawesome.min.css' %}">
+  <link rel="stylesheet" href="{% static '../static/css/plugins/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static '../static/css/plugins/animate.css' %}">
+  <link rel="stylesheet" href="{% static '../static/css/style.css' %}">
   <!-- Theme Style -->
-  <link rel="stylesheet" href="../assets/css/theme_9.css">
+  <link rel="stylesheet" href="{% static '../static/css/theme_9.css' %}">
 </head>
 
 <body>
@@ -22,18 +24,18 @@
   <div class="cs-preloader cs-accent_color_2 cs-white_bg">
     <div class="cs-preloader_bg cs-center cs-accent_7_bg_2">
       <div class="cs-preloader_in cs-accent_15_border_2">
-        <img src="../assets/img/e-commerce/logo_mini.svg" alt="Logo">
+        <img src="{% static '../static/img/e-commerce/logo_mini.svg' %}" alt="Logo">
       </div>
     </div>
   </div>
   <!-- End Preloader -->
   <div class="cs-comming_soon cs-style1 cs-center cs-accent_5_bg">
     <div class="cs-comming_soon_left">
-      <div class="cs-comming_soon_img"><img src="../assets/img/digital-agency/launching-project.svg" alt=""></div>
+      <div class="cs-comming_soon_img"><img src="{% static '../static/img/digital-agency/launching-project.svg' %}" alt=""></div>
     </div>
     <div class="cs-comming_soon_right">
       <div class="cs-comming_soon_text">
-        <div class="cs-comming_soon_logo text-center"><img src="../assets/img/e-commerce/logo_mini.svg" alt=""></div>
+        <div class="cs-comming_soon_logo text-center"><img src="../static/img/e-commerce/logo_mini.svg' %}" alt=""></div>
         <div class="cs-height_50 cs-height_lg_40"></div>
         <h1 class="cs-comming_soon_title text-center m-0">We are <b class="cs-accent_color_2">launching</b> soon</h1>
         <div class="cs-height_80 cs-height_lg_40"></div>
@@ -68,8 +70,8 @@
   </div>
 
   <!-- Script -->
-  <script src="../assets/js/plugins/jquery-3.6.0.min.js"></script>
-  <script src="../assets/js/plugins/wow.min.js"></script>
-  <script src="../assets/js/main.js"></script>
+  <script src="{% static '../static/js/plugins/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static '../static/js/plugins/wow.min.js' %}"></script>
+  <script src="{% static '../static/js/main.js' %}"></script>
 </body>
 </html>
