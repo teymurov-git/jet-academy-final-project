@@ -44,6 +44,6 @@
 
 15. MEDIA_URL və STATIC_URL fayllarının lazımi konfiqurasiyasını setting.py-a əlavə edirik.
 
-16. Hər html faylına {% load static%} əlavə edirik və düzəldirik.
+16. Hər html faylına {% load static %} əlavə edirik və düzəldirik.
 
 <!-- sonuncu defe core.templates faylini duzeltdim -->
