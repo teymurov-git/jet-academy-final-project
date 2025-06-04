@@ -46,4 +46,4 @@
 
 16. Hər html faylına {% load static %} əlavə edirik və düzəldirik.
 
-<!-- sonuncu defe core.templates faylini duzeltdim -->
+<!-- sonuncu defe core.index.html diger core folderleri duzeldecem -->
