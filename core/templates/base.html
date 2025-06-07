@@ -31,6 +31,7 @@
     </div>
   </div>
   <!-- End Preloader -->
+   
   <!-- Start Header Section -->
   <header class="cs-site_header cs-style1 cs-type5 cs-sticky-header cs-gray_bg">
     <div class="cs-top_header">
@@ -203,6 +204,7 @@
   <!-- End Header Section -->
   <div class="cs-height_160 cs-height_lg_130"></div>
 
+  {% block content %}
   <!-- Start Hero -->
   <div class="cs-gray_bg">
     <div class="container wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
@@ -863,11 +865,12 @@
     <div class="cs-height_175 cs-height_lg_175"></div>
   </div>
   <!-- End Blog Post -->
-
+  {% endblock %}
   <!-- Footer Section -->
   <footer class="cs-footer cs-style1 rounded-0 cs-accent_7_bg_2">
     <div class="container">
       <div class="row">
+        {% block sellof %}
         <div class="col-lg-12">
           <div class="cs-cta cs-style1 cs-type2 cs-accent_bg_2 cs-bg" data-src="../static/img/e-commerce/cta_img.png">
             <h2 class="cs-cta_title cs-bold cs-white">Sign Up & <br>Get 10% Off</h2>
@@ -878,6 +881,7 @@
             </div>
           </div>
         </div>
+        {% endblock %}
       </div>
       <div class="cs-height_115 cs-height_lg_75"></div>
       <div class="row">
@@ -969,7 +973,7 @@
     </div>
   </div>
   <!-- End Video Popup -->
-
+  {% block js %}
   <!-- Script -->
   <script src="{% static '../static/js/plugins/jquery-3.6.0.min.js' %}"></script>
   <script src="{% static '../static/js/plugins/isotope.pkg.min.js' %}"></script>
@@ -978,6 +982,6 @@
   <script src="{% static '../static/js/plugins/jquery.counter.min.js' %}"></script>
   <script src="{% static '../static/js/plugins/wow.min.js' %}"></script>
   <script src="{% static '../static/js/main.js' %}"></script>
+  {% endblock %}
 </body>
-
 </html>

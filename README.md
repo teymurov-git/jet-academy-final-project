@@ -46,4 +46,5 @@
 
 16. Hər html faylına {% load static %} əlavə edirik və düzəldirik.
 
-<!-- sonuncu defe core.index.html diger core folderleri duzeldecem -->
+
+<!-- core|accounts.templates pages are ready for product server -->
