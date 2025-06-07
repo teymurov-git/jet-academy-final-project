@@ -46,5 +46,6 @@
 
 16. Hər html faylına {% load static %} əlavə edirik və düzəldirik.
 
+17. base.html faylını index.html-ə əsasən yaradıb digər fayllar üçün ordan inherit alırıq.
 
-<!-- core|order|blog|accounts.templates pages are ready for product server -->
+<!-- All pages are ready -->

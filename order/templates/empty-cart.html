@@ -8,13 +8,13 @@
     <div class="cs-height_130 cs-height_lg_70"></div>
     <div class="container">
       <div class="cs-empty_cart cs-white_bg text-center">
-        <img src="../static/img/e-commerce/empty_cart.svg" alt="Empty">
+        <img src="{% static '../static/img/e-commerce/empty_cart.svg' %}" alt="Empty">
         <div class="cs-height_40 cs-height_lg_30"></div>
         <h2 class="cs-semi_bold">Your cart is recently empty</h2>
         <p>Before proceed to checkout you must add some products to your shopping cart. <br>
           You will find a lot of interesting products on our "Shop" page.</p>
           <div class="cs-height_5 cs-height_lg_0"></div>
-        <a href="index.html" class="cs-btn cs-style1 cs-rounded cs-medium cs-primary_font cs-accent_bg cs-accent_border cs-white cs-accent_bg_2_hover cs-white_hover cs-accent_border_2_hover">Return to Shop</a>
+        <a href="{% url 'home' %}" class="cs-btn cs-style1 cs-rounded cs-medium cs-primary_font cs-accent_bg cs-accent_border cs-white cs-accent_bg_2_hover cs-white_hover cs-accent_border_2_hover">Return to Shop</a>
       </div>
     </div>
     <div class="cs-height_140 cs-height_lg_80"></div>
