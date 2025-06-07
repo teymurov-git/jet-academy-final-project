@@ -48,4 +48,29 @@
 
 17. base.html faylını index.html-ə əsasən yaradıb digər fayllar üçün ordan inherit alırıq.
 
+18. Database dəyişmək üçün sqlite silirik.
+
+19. docker-compose.yml yaradırıq.
+
+20. dockerhub-dan postgres faylını əlavə edib, bəzi təhlükəsizlik parametrlərini daxil edirik.
+
+21. Postgresin portunu və volume-ni əlavə edirik. 
+(ports:
+      -5432:5432 )
+(volumes:
+      - ../pgdb:/var/lib/postgresql/data)
+
+22. settings.py konfiqurasiya edirik.
+(DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ecom',
+        'USER': 'project',
+        'PASSWORD': '12345',
+        'PORT': 5432,
+        'HOST': 'localhost'
+    }
+})
+
+23. python manage.py runserver edirik. xeta gelir ve pip install psycopg2-binary edirik. migrate edirik. yene runserver edirik ve cedveller gorunurse demeli veb qosulub.(redakte edecem)
 <!-- All pages are ready -->
