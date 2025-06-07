@@ -47,4 +47,4 @@
 16. Hər html faylına {% load static %} əlavə edirik və düzəldirik.
 
 
-<!-- core|accounts.templates pages are ready for product server -->
+<!-- core|order|blog|accounts.templates pages are ready for product server -->
