@@ -72,5 +72,54 @@
     }
 })
 
-23. python manage.py runserver edirik. xeta gelir ve pip install psycopg2-binary edirik. migrate edirik. yene runserver edirik ve cedveller gorunurse demeli veb qosulub.(redakte edecem)
-<!-- All pages are ready -->
+23. python manage.py runserver edirik. Xəta gəlir və pip install psycop2-binary edirik. migrate edirik. Yenə python manage.py runserver edirik və cədvəllər görünürsə deməli veb qoşulub.
+
+24. Bundan sonra proyekti hər açanda environmentlə yanaşı dockeridə işə salacıq.
+
+25. Istifadəçi yaradırıq 
+    python manage.py createsuperuser
+
+26. adminer, proyektin admin səhifəsində baxabilərik (user-a)
+
+27. Modellərə keçid edirik.
+
+28. Modeli account app-ində quranda User cədvəli yaratdıq və təbii olaraq admin paneldədə user cədvəli olduğundan settings.py hansı cədvəli əsas götürəcəyimizi yazmalıyıq. 
+(AUTH_USER_MODEL = 'account.user')
+
+29. Migration ilə bağlı problemlə üzləşirik. Biz migrate, user modelini yaratdıqdan sonra etməliydik deyə dockeri down edirik. pgdb silirik. daha sonra migration fayllarini silirik. docker yenidən işə salırıq. pgdb yenidən yaranır. daha sonra makemigrations edirik. sonra migrate edirik.
+
+29. * Migration xətası ilə üzləşməyək deyə birinci modeli yaradıb makemigrate edirik daha sonra isə migrate.
+
+30. Məsələn bunu accountda models.py içərisinə yazırıq.
+
+(
+from django.contrib.auth.models import AbstractUser
+
+class User(AbstractUser):
+    photo = models.ImageField('photo', null=True, blank=True)
+    phone = models.CharField('phone', max_length=100, null=True, blank=True)
+    bio = models.TextField('bio', null=True, blank=True)
+)
+
+  * admin.py-da isə bunu yazmaqla database-də account app-i yaradırıq və içində User cədvəli yaradılır.
+    (
+    from account.models import User
+
+    # Register your models here.
+
+    admin.site.register(User)
+    )
+ daha sonra python manage.py makemigrations 
+            python manage.py migrate 
+            edib database yollayırıq həmin field-i.
+31. User, Contact, Subsriber cədvəlləri qurulur.
+
+32. productda ProductCategory cədvəlini yaradırıq. admin paneldə categoriyalarımızı yaradırıq.
+
+33. Product cədvəlinidə yaradırıq. Many-to-One əlaqəsini qururuq.
+
+34. ProductCategory cədvəlini özü ilə əlaqələndiririk.
+
+35. backup qurmaq lazım olur txt formatında və ona uyğun qovluq (backup) yaradıb ilk sətiri ora atırıq.
+
+36. ProductImage cədvəlini qururuq. makemigrations və migrate edirik databaseyə yollayırıq.
