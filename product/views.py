@@ -3,12 +3,12 @@ from product.models import Product
 
 # Create your views here.
 
-def product_details(request):
+def shop_left_sidebar(request):
     products = Product.objects.all()
     context = {
         'products': products
     }
-    return render(request, 'product-details.html', context)
+    return render(request, 'shop-left-sidebar.html', context)
 
-def shop_left_sidebar(request):
-    return render(request, 'shop-left-sidebar.html')
+def product_details(request):
+    return render(request, 'product-details.html')

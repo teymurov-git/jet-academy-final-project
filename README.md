@@ -123,3 +123,5 @@ class User(AbstractUser):
 35. backup qurmaq lazım olur txt formatında və ona uyğun qovluq (backup) yaradıb ilk sətiri ora atırıq.
 
 36. ProductImage cədvəlini qururuq. makemigrations və migrate edirik databaseyə yollayırıq.
+
+37. Databasedən shop-a fronta məlumat ötürürük.
