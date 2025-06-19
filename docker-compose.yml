@@ -9,7 +9,7 @@ services:
     restart: always
     shm_size: 128mb
     volumes:
-      - ../pgdb:/var/lib/postgresql/data
+      - ./pgdb:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: 'shop'
       POSTGRES_USER: 'tech'

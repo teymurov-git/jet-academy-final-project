@@ -1,5 +1,7 @@
 from django.db import models
 from core.models import AbstractModel
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 # Create your models here.
 
@@ -7,7 +9,7 @@ class ProductCategory(AbstractModel):
 
     parent = models.ForeignKey('self', related_name='children', on_delete=models.CASCADE, null=True, blank=True)
 
-    title = models.CharField('title',max_length=100)
+    title = models.CharField('title', max_length=100)
 
     def __str__(self):
         if self.parent:
@@ -17,6 +19,7 @@ class ProductCategory(AbstractModel):
     class Meta:
         """ bu setir bize admin panelde duzgun cemlendirme yazilisina komek edir. """
         verbose_name_plural = 'Product Categories' 
+
 
 class Product(AbstractModel):
 
@@ -31,6 +34,7 @@ class Product(AbstractModel):
     def __str__(self):
         return f'{self.title}'
     
+
 class ProductImage(AbstractModel):
 
     image = models.ImageField('image', upload_to='product_images/')
@@ -41,3 +45,16 @@ class ProductImage(AbstractModel):
     
     class Meta:
         verbose_name_plural = 'Product Images'
+
+
+class ProductReview(AbstractModel):
+
+    message = models.TextField('message', max_length=200)
+    product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='reviews', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.user.username} -> {self.product.title}'
+    
+    class Meta:
+        verbose_name_plural = 'Product Reviews'

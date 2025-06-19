@@ -125,3 +125,9 @@ class User(AbstractUser):
 36. ProductImage cədvəlini qururuq. makemigrations və migrate edirik databaseyə yollayırıq.
 
 37. Databasedən shop-a fronta məlumat ötürürük.
+
+38. ProductReview cədvəli qururuq.
+
+39. Blog cədvəli qururuq.
+
+<!-- Sonuncu defe fronta melumat otururdum ve django models #2 dersinin 35ci deqiqesinde qaldim -->
