@@ -211,7 +211,8 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              {% for product in products %}
+              <a href="{% url 'product_details' product.pk product.pk %}" class="cs-product_img cs-center"><img
                   src="{% static '../static/img/e-commerce/product6.png' %}" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -222,7 +223,7 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Black headphone</a></h2>
+              <h2 class="cs-product_title"><a href="{% url 'product_details' product.pk %}">Black headphone</a></h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$10.75</div>
                 <a href="#" class="cs-product_btn">
@@ -238,7 +239,7 @@
           <div class="cs-product cs-style1 cs-white_bg">
             <span class="cs-product_badge cs-accent_bg cs-white text-uppercase cs-medium">Sale</span>
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img
                   src="{% static '../static/img/e-commerce/product4.png' %}" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -249,7 +250,7 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Black hand watch</a></h2>
+              <h2 class="cs-product_title"><a href="{% url 'product_details' product.pk %}">Black hand watch</a></h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$20.50</div>
                 <a href="#" class="cs-product_btn">
@@ -264,7 +265,7 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img
                   src="{% static '../static/img/e-commerce/product7.png' %}" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -275,7 +276,7 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Blue wing chair</a></h2>
+              <h2 class="cs-product_title"><a href="{% url 'product_details' product.pk %}">Blue wing chair</a></h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$30.00</div>
                 <a href="#" class="cs-product_btn">
@@ -290,7 +291,7 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img
                   src="{% static '../static/img/e-commerce/product5.png' %}" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -301,7 +302,7 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Hand bag</a></h2>
+              <h2 class="cs-product_title"><a href="{% url 'product_details' product.pk %}">Hand bag</a></h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$15.00</div>
                 <a href="#" class="cs-product_btn">
@@ -316,7 +317,7 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img
                   src="{% static '../static/img/e-commerce/product8.png' %}" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -327,7 +328,7 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Black sneaker</a></h2>
+              <h2 class="cs-product_title"><a href="{% url 'product_details' product.pk %}">Black sneaker</a></h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$15.00</div>
                 <a href="#" class="cs-product_btn">
@@ -342,7 +343,7 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img
                   src="{% static '../static/img/e-commerce/product9.png' %}" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -353,7 +354,7 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Hand bag</a></h2>
+              <h2 class="cs-product_title"><a href="{% url 'product_details' product.pk %}">Hand bag</a></h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$45.00</div>
                 <a href="#" class="cs-product_btn">
@@ -368,7 +369,7 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img
                   src="{% static '../static/img/e-commerce/product10.png' %}" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -379,7 +380,7 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Yellow wing chair</a></h2>
+              <h2 class="cs-product_title"><a href="{% url 'product_details' product.pk %}">Yellow wing chair</a></h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$40.00</div>
                 <a href="#" class="cs-product_btn">
@@ -395,7 +396,7 @@
           <div class="cs-product cs-style1 cs-white_bg">
             <span class="cs-product_badge cs-accent_bg_2 cs-white text-uppercase cs-medium">New</span>
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img
                   src="{% static '../static/img/e-commerce/product11.png' %}" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -406,13 +407,14 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Black hand watch</a></h2>
+              <h2 class="cs-product_title"><a href="{% url 'product_details' product.pk %}">Black hand watch</a></h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$50.00</div>
                 <a href="#" class="cs-product_btn">
                   <i class="fas fa-cart-plus"></i>
                   Buy Now
                 </a>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -423,7 +425,7 @@
     <div class="cs-height_110 cs-height_lg_50"></div>
   </div>
   <!-- End Featured Product -->
-
+  
   <div class="cs-height_140 cs-height_lg_80"></div>
   <div class="container wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
     <div class="cs-product_group_1">
@@ -481,7 +483,8 @@
           <div class="cs-product cs-style1 cs-white_bg">
             <span class="cs-product_badge cs-accent_bg cs-white text-uppercase cs-medium">Sale</span>
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              {% for product in products %}
+              <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img
                   src="../static/img/e-commerce/product4.png" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -492,7 +495,7 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Black hand watch</a></h2>
+              <h2 class="cs-product_title"><a href="{% url 'product_details' product.pk %}">Black hand watch</a></h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$20.50</div>
                 <a href="#" class="cs-product_btn">
@@ -507,7 +510,7 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img
                   src="../static/img/e-commerce/product5.png" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -518,7 +521,7 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Hand bag</a></h2>
+              <h2 class="cs-product_title"><a href="{% url 'product_details' product.pk %}">Hand bag</a></h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$15.00</div>
                 <a href="#" class="cs-product_btn">
@@ -533,7 +536,7 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img
                   src="../static/img/e-commerce/product6.png" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -544,7 +547,7 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Black headphone</a></h2>
+              <h2 class="cs-product_title"><a href="{% url 'product_details' product.pk %}">Black headphone</a></h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$10.75</div>
                 <a href="#" class="cs-product_btn">
@@ -559,7 +562,7 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
+              <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img
                   src="../static/img/e-commerce/product7.png" alt=""></a>
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
@@ -570,13 +573,15 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Blue wing chair</a></h2>
-              <div class="cs-product_meta">
-                <div class="cs-product_price">$30.00</div>
-                <a href="#" class="cs-product_btn">
-                  <i class="fas fa-cart-plus"></i>
-                  Buy Now
-                </a>
+              <h2 class="cs-product_title">
+                <a href="{% url 'product_details' product.pk %}">Blue wing chair</a></h2>
+                <div class="cs-product_meta">
+                  <div class="cs-product_price">$30.00</div>
+                  <a href="#" class="cs-product_btn">
+                    <i class="fas fa-cart-plus"></i>
+                    Buy Now
+                  </a>
+                  {% endfor %}
               </div>
             </div>
           </div>
