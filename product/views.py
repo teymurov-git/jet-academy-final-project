@@ -10,5 +10,9 @@ def shop_left_sidebar(request):
     }
     return render(request, 'shop-left-sidebar.html', context)
 
-def product_details(request):
-    return render(request, 'product-details.html')
+def product_details(request, pk):
+    product = Product.objects.get(id=pk)
+    context = {
+        'product': product
+    }
+    return render(request, 'product-details.html', context)

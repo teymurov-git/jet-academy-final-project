@@ -130,4 +130,5 @@ class User(AbstractUser):
 
 39. Blog cədvəli qururuq.
 
+40. Sonuncu dəfə shop url düzəltdik id ilə müraciət və product details cədvəlini həll elədik.
 <!-- Sonuncu defe fronta melumat otururdum ve django models #2 dersinin 35ci deqiqesinde qaldim -->
