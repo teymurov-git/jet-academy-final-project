@@ -76,7 +76,7 @@
             <div class="col-lg-4 col-sm-6">
               <div class="cs-product cs-style1 cs-white_bg">
                 <div class="cs-product_thumb"> 
-                  <a href="{% url 'product_details'  %}" class="cs-product_img cs-center"><img src="{{product.cover_image.url}}" alt=""></a>
+                  <a href="{% url 'product_details' product.pk %}" class="cs-product_img cs-center"><img src="{{product.cover_image.url}}" alt=""></a>
                   <div class="cs-product_toolbox cs-white_bg">
                     <div class="cs-product_toolbox_in cs-accent_15_bg_2">
                       <a href="#"><i class="far fa-heart"></i></a>
