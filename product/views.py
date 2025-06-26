@@ -11,7 +11,11 @@ def shop_left_sidebar(request):
     return render(request, 'shop-left-sidebar.html', context)
 
 def product_details(request, pk):
-    product = get_object_or_404(Product, pk = pk)
+    try:
+        product = Product.objects.get(pk=pk)
+    except Product.DoesNotExist:
+        return render(request, '404.html', status=404)
+
     context = {
         'product': product
     }

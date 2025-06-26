@@ -18,12 +18,23 @@ class ProductCategory(AbstractModel):
     
     class Meta:
         """ bu setir bize admin panelde duzgun cemlendirme yazilisina komek edir. """
-        verbose_name_plural = 'Product Categories' 
+        verbose_name_plural = 'Product Categories'
+
+
+class ProductTag(AbstractModel):
+    title = models.CharField('tag', max_length=100)
+
+    class Meta:
+        verbose_name_plural = 'Product Tags'
+
+    def __str__(self):
+        return self.title 
 
 
 class Product(AbstractModel):
 
     category = models.ForeignKey(ProductCategory, related_name='products', on_delete=models.CASCADE)
+    tags = models.ManyToManyField(ProductTag, related_name='products')
 
     title = models.CharField('title', max_length=100)
     price = models.DecimalField(max_digits=5, decimal_places=2)

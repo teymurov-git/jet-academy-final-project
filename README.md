@@ -134,4 +134,4 @@ class User(AbstractUser):
 
 41. Django interface üçün admin.py advance formaya gətiririk.
  
-<!-- Sonuncu dəfə Django Admin dərsinin 18ci dəqiqəsində qaldıq -->
+<!-- Sonuncu dəfə Django Admin dərsi bitdi -->
