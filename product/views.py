@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from product.models import Product, ProductCategory
 
 # Create your views here.
@@ -11,7 +11,7 @@ def shop_left_sidebar(request):
     return render(request, 'shop-left-sidebar.html', context)
 
 def product_details(request, pk):
-    product = Product.objects.get(id=pk)
+    product = get_object_or_404(Product, pk = pk)
     context = {
         'product': product
     }
