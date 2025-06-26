@@ -133,5 +133,6 @@ class User(AbstractUser):
 40. Sonuncu dəfə shop url düzəltdik id ilə müraciət və product details cədvəlini həll elədik.
 
 41. Django interface üçün admin.py advance formaya gətiririk.
+
  
-<!-- Sonuncu dəfə Django Admin dərsi bitdi -->
+<!-- Template Filter dersine baxdiq sonuncu defe -->

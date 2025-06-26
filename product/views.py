@@ -5,8 +5,10 @@ from product.models import Product, ProductCategory
 
 def shop_left_sidebar(request):
     products = Product.objects.all()
+    categories = ProductCategory.objects.all()
     context = {
-        'products': products
+        'products': products,
+        'categories': categories
     }
     return render(request, 'shop-left-sidebar.html', context)
 

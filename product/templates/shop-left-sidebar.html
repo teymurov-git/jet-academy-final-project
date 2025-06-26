@@ -14,12 +14,18 @@
             <div class="cs-shop_widget cs-border_color">
               <h3 class="cs-shop_widget_title">Categories</h3>
               <ul class="menu">
-                <li><a href="#"><i class="fas fa-angle-right"></i>Sneakers(10)</a></li>
-                <li><a href="#"><i class="fas fa-angle-right"></i>Headset(5)</a></li>
+                {% for category in categories %}
+                {% if not category.parent %}
+                <li><a href="#"><i class="fas fa-angle-right"></i>{{category.title}}</a></li>
+                {% else %}
+                <li><a href="#"><i class="fas fa-angle-right"></i>{{category.parent}}</a></li>
+                {% endif %}
+                {% endfor %}
+                <!-- <li><a href="#"><i class="fas fa-angle-right"></i>Headset(5)</a></li>
                 <li><a href="#"><i class="fas fa-angle-right"></i>Hand Bag(7)</a></li>
                 <li><a href="#"><i class="fas fa-angle-right"></i>Wing Chair(4)</a></li>
                 <li><a href="#"><i class="fas fa-angle-right"></i>Smart Watch(11)</a></li>
-                <li><a href="#"><i class="fas fa-angle-right"></i>Watch(20)</a></li>
+                <li><a href="#"><i class="fas fa-angle-right"></i>Watch(20)</a></li> -->
               </ul>
             </div>
             <div class="cs-shop_widget cs-border_color">
