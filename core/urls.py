@@ -3,7 +3,6 @@ from django.urls import path
 from core.views import homepage, contact, coming_soon, not_found_page
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', homepage, name = 'home'), 
     path('contact/', contact, name = 'contact'),
     path('soonex/', coming_soon, name = 'coming_soon'),

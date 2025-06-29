@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.contrib import messages
 from product.models import ProductCategory
 from core.forms import ContactForm
 
@@ -13,6 +15,8 @@ def contact(request):
         form = ContactForm(data = request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Messages has sent to succesfull!')
+        return redirect(reverse_lazy('contact'))
     context = {
         'form': form
     }
