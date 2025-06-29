@@ -134,5 +134,6 @@ class User(AbstractUser):
 
 41. Django interface üçün admin.py advance formaya gətiririk.
 
+42. ContactForm,RegisterForm və LoginForm hazır edirik.
  
 <!-- Template Filter dersine baxdiq sonuncu defe -->
