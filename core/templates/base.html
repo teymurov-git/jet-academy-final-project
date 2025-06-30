@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="{% static '../static/css/plugins/slick.css' %}">
   <link rel="stylesheet" href="{% static '../static/css/plugins/animate.css' %}">
   <link rel="stylesheet" href="{% static '../static/css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Theme Style -->
   <link rel="stylesheet" href="{% static '../static/css/theme_9.css' %}">
 </head>
@@ -67,10 +69,59 @@
                   <li><a href="#" class="cs-accent_color_2_hover cs-accent_10_bg_2_hover">Azerbaijan</a></li>
                 </ul>
               </div>
-              <a href="{% url 'signin' %}" class="cs-icon_btn cs-accent_color_2_hover">
-                <i class="far fa-user"></i>
-                <span>Login</span>
-              </a>
+              {% if user.is_authenticated %}
+              <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                  {% csrf_token %}
+                  <button type="submit" class="auth-btn">
+                      <i class="fas fa-user"></i> Logout
+                  </button>
+              </form>
+              {% else %}
+                  <a href="{% url 'signin' %}" class="auth-btn">
+                    <i class="fas fa-user"></i> Login
+                  </a>
+              {% endif %}
+        
+            <style>
+                .auth-btn {
+                    background: none;
+                    border: none;
+                    color: #6F8BA4;
+                    font-size: 16px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    text-decoration: none;
+                }
+
+                .auth-btn:hover {
+                    color: #34495e;
+                }
+            </style>
+            <style>
+                .auth-btn {
+                    background: none;
+                    border: none;
+                    color: #6F8BA4;
+                    font-size: 16px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    text-decoration: none;
+                }
+
+                .auth-btn:hover {
+                    color: #34495e;
+                }
+            </style>
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}" class="auth-btn">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+            {% endif %}
+
             </div>
           </div>
         </div>

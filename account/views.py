@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
 from account.forms import RegisterForm, LoginForm
-from django.contrib.auth import authenticate, login as django_login
+from django.contrib.auth import authenticate, login as django_login, logout as django_logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 def signin(request):
+    next = request.GET.get('next', reverse_lazy('home'))
     form = LoginForm()
     if request.method == 'POST':
         form = LoginForm(data=request.POST) 
@@ -17,7 +19,7 @@ def signin(request):
                 return redirect('signin')
             else:
                 django_login(request, user)
-                return redirect('home')
+                return redirect(next)
     context = {
         'form': form
     }
@@ -38,3 +40,11 @@ def signup(request):
         'form': form
     }
     return render(request, 'signup.html', context)
+
+def logout(request):
+    django_logout(request)
+    return redirect(reverse_lazy('signin'))
+
+@login_required
+def profile(request):
+    return render(request, 'profile.html')

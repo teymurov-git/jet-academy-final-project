@@ -15,35 +15,29 @@
                 <div class="col-lg-6">
                     <div class="about-text go-to">
                         <h3 class="dark-color">About Me</h3>
-                        <h6 class="theme-color lead">A Lead UX &amp; UI designer based in Canada</h6>
-                        <p>I <mark>design and develop</mark> services for customers of all sizes...</p>
-                        <div class="row about-list">
+                         <div class="row about-list">
                             <div class="col-md-6">
                                 <div class="media">
                                     <label>Username</label>
-                                    <p>5teymrovx</p>
+                                    <p>{{user.username}}</p>
                                 </div>
                                 <div class="media">
                                     <label>Firstname</label>
-                                    <p>Yusif</p>
+                                    <p>{{user.first_name}}</p>
                                 </div>
                                 <div class="media">
                                     <label>Lastname</label>
-                                    <p>Teymurlu</p>
+                                    <p>{{user.last_name}}</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="media">
                                     <label>E-mail</label>
-                                    <p>info@domain.com</p>
+                                    <p>{{user.email}}</p>
                                 </div>
                                 <div class="media">
                                     <label>Phone</label>
-                                    <p>820-885-3321</p>
-                                </div>
-                                <div class="media">
-                                    <label>Password</label>
-                                    <p>skype.0404</p>
+                                    <p>{{user.phone}}</p>
                                 </div>
                                 
                             </div>
@@ -52,7 +46,11 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-avatar">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                        {% if request.user.photo %}
+                            <img src="{{request.user.photo.url}}" alt="" width="315px" height="315px">
+                        {% else %}   
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                        {% endif %}
                     </div>
                 </div>
             </div>
