@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-# Create your models here.
 
+# Create your models here.
 
 class User(AbstractUser):
     photo = models.ImageField('photo', upload_to='user_photos/' ,null=True, blank=True)
@@ -9,5 +9,4 @@ class User(AbstractUser):
     bio = models.TextField('bio', null=True, blank=True)
 
     def __str__(self):
-        return self.first_name
-    
+        return self.username

@@ -16,7 +16,7 @@
               <ul class="menu">
                 {% for category in categories %}
                 {% if not category.parent %}
-                <li><a href="#"><i class="fas fa-angle-right"></i>{{category.title}}</a></li>
+                <li><a href="{% url 'shop_left_sidebar' %}?category={{category.id}}"><i class="fas fa-angle-right"></i>{{category.title}}</a></li>
                 {% else %}
                 <li><a href="#"><i class="fas fa-angle-right"></i>{{category.parent}}</a></li>
                 {% endif %}
@@ -109,12 +109,22 @@
           <div class="cs-height_60 cs-height_lg_30"></div>
           <div class="cs-post_pagination cs-style1 cs-with_round cs-medium">
             <ul class="page-numbers">
-              <li><span class="page-number current">1</span></li>
-              <li><a class="page-number" href="#">2</a></li>
-              <li><a class="page-number" href="#">3</a></li>
-              <li><a class="next page-number" href="#"><i class="fas fa-angle-right"></i></a></li>
-            </ul>
-          </div>
+                {% if page_obj.has_previous %}
+                <li><a class="prev page-number" href="?page={{ page_obj.previous_page_number }}"><i class="fas fa-angle-left"></i></a></li>
+                {% endif %}
+                {% for page in page_obj.paginator.page_range %}
+                {% if page is page_obj.number %}
+                <li><span class="page-number current" href="?page={{page}}">{{page}}</span></li>
+                {% else %}
+                <li><a class="page-number" href="?page={{page}}">{{page}}</a></li>
+                {% endif %}
+                {% endfor %}
+                <!-- <li><a class="page-number" href="#">3</a></li> -->
+                {% if page_obj.has_next %}
+                <li><a class="next page-number" href="?page={{ page_obj.next_page_number }}"><i class="fas fa-angle-right"></i></a></li>
+                {% endif %}
+              </ul>
+            </div>
         </div>
       </div>
     </div>

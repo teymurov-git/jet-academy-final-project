@@ -1,10 +1,12 @@
 from django.contrib import admin
-from django.urls import path
-from account.views import signin, signup, profile, logout
+from django.urls import path, re_path
+from account.views import signin, signup, profile, logout, activate
 
 urlpatterns = [
     path('signin/', signin, name = 'signin'),
     path('signup/', signup, name = 'signup'),
     path('profile/', profile, name = 'profile'),
-    path('logout/', logout, name = 'logout')
+    path('logout/', logout, name = 'logout'),
+    re_path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,32})/$',
+        activate, name='activate'),
 ]

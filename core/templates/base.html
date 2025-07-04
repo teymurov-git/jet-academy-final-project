@@ -198,26 +198,32 @@
           <div class="cs-main_header_center">
             <div class="cs-nav">
               <ul class="cs-nav_list">
-                <li class="menu-item-has-children cs-mega-menu current-menu-item"><a
-                    href="{% url 'home' %}">Home</a>
+              <li class="menu-item-has-children cs-mega-menu {% if request.resolver_match.url_name == 'home' %}current-menu-item{% endif %}">
+                <a href="{% url 'home' %}">Home</a>
+              </li>
 
-                </li>
-                <li class="menu-item-has-children"><a href="{% url 'shop_left_sidebar' %}">Shop</a>
+              <li class="menu-item-has-children {% if request.resolver_match.url_name == 'shop_left_sidebar' %}current-menu-item{% endif %}">
+                <a href="{% url 'shop_left_sidebar' %}">Shop</a>
+              </li>
 
-                </li>
-                <li class="menu-item-has-children"><a href="{% url 'blog' %}">Pages</a>
-                  <ul>
-                    <li><a href="{% url 'signin' %}">Sign In</a></li>
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                    <li><a href="{% url 'coming_soon' %}">Coming Soon</a></li>
-                    <li><a href="{% url 'not_found_page' %}">Error Page</a></li>
-                  </ul>
-                </li>
-                <li class="menu-item-has-children"><a href="{% url 'blog' %}">Blogs</a>
-                  
-                </li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-              </ul>
+              <li class="menu-item-has-children {% if request.resolver_match.url_name in 'signin signup coming_soon not_found_page' %}current-menu-item{% endif %}">
+                <a href="{% url 'blog' %}">Pages</a>
+                <ul>
+                  <li><a href="{% url 'signin' %}">Sign In</a></li>
+                  <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                  <li><a href="{% url 'coming_soon' %}">Coming Soon</a></li>
+                  <li><a href="{% url 'not_found_page' %}">Error Page</a></li>
+                </ul>
+              </li>
+
+              <li class="menu-item-has-children {% if request.resolver_match.url_name == 'blog' %}current-menu-item{% endif %}">
+                <a href="{% url 'blog' %}">Blogs</a>
+              </li>
+
+              <li class="{% if request.resolver_match.url_name == 'contact' %}current-menu-item{% endif %}">
+                <a href="{% url 'contact' %}">Contact</a>
+              </li>
+            </ul>
             </div>
           </div>
           <div class="cs-main_header_right">

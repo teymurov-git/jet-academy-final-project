@@ -1,16 +1,36 @@
 from django.shortcuts import render, get_object_or_404
 from product.models import Product, ProductCategory
 
+from django.views.generic import ListView
+
+
 # Create your views here.
 
-def shop_left_sidebar(request):
-    products = Product.objects.all()
-    categories = ProductCategory.objects.all()
-    context = {
-        'products': products,
-        'categories': categories
-    }
-    return render(request, 'shop-left-sidebar.html', context)
+class ProductListView(ListView):
+    template_name = 'shop-left-sidebar.html'
+    model = Product
+    context_object_name = 'products'
+    paginate_by = 1
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = ProductCategory.objects.all()
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        cat_id = self.request.GET.get('category')
+        if cat_id:
+            queryset = queryset.filter(category = cat_id)
+        return queryset
+# def shop_left_sidebar(request):
+#     products = Product.objects.all()
+#     categories = ProductCategory.objects.all()
+#     context = {
+#         'products': products,
+#         'categories': categories
+#     }
+#     return render(request, 'shop-left-sidebar.html', context)
 
 def product_details(request, pk):
     try:
