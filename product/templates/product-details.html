@@ -62,73 +62,36 @@
       <div class="cs-tabs cs-fade_tabs cs-style1">
         <ul class="cs-tab_links cs-style2 cs-mp0 cs-primary_font cs-medium">
           <li class="active"><a href="#tab_one">Description</a></li>
-          <li><a href="#tab_two">Additional Info</a></li>
           <li><a href="#tab_three">Reviews</a></li>
         </ul>
         <div class="cs-tab_content">
           <div id="tab_one" class="cs-tab active">
             <div class="cs-product_tab cs-style1 cs-accent_20_bg_2">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+              <p>{{product.decription}}</p>
               <ul>
-                <li><i class="fas fa-check cs-center cs-accent_15_bg_2 cs-accent_color_2 cs-rounded"></i>Simple product option, easy to use</li>
-                <li><i class="fas fa-check cs-center cs-accent_15_bg_2 cs-accent_color_2 cs-rounded"></i>Modern and useful product</li>
-              </ul>
-              <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. </p>
-            </div>
-          </div><!-- .cs-tab -->
-          <div id="tab_two" class="cs-tab">
-            <div class="cs-product_tab cs-style1 cs-accent_20_bg_2">
-              <ul class="cs-details_list cs-style1 cs-mp0">
-                <li>
-                  <div class="cs-list_title"><span class="cs-medium cs-accent_color_2">Color</span></div>
-                  <div class="cs-list_text">Red</div>
-                </li>
-                <li>
-                  <div class="cs-list_title"><span class="cs-medium cs-accent_color_2">Size</span></div>
-                  <div class="cs-list_text">Large</div>
-                </li>
-                <li>
-                  <div class="cs-list_title"><span class="cs-medium cs-accent_color_2">Quantity</span></div>
-                  <div class="cs-list_text">
-                    <div class="cs-portfolio_tags">3 Pic</div>
-                  </div>
-                </li>
-                <li>
-                  <div class="cs-list_title"><span class="cs-medium cs-accent_color_2">Warranty</span></div>
-                  <div class="cs-list_text">2 years</div>
-                </li>
-              </ul>
             </div>
           </div><!-- .cs-tab -->
           <div id="tab_three" class="cs-tab">
             <div class="cs-product_tab cs-style1 cs-accent_20_bg_2">
               <ol class="comment-list cs-type1">
                 <li class="comment">
+                  {% if review %}
+                  {% for review in reviews %}
                   <div class="comment-body">
                     <div class="comment-author vcard">
                       <img class="avatar" src="{% static '../static/img/digital-agency/avatar2.jpg' %}" alt="Author"> 
-                      <span class="cs-medium cs-primary_color">George Steven</span>
+                      <span class="cs-medium cs-primary_color">{{review.user}}</span>
                     </div>
                     <div class="comment-meta">Jan 24, 2022 at 9:59 am</div>
                     <div class="cs-review" data-review="4.5">
                       <div class="cs-review_in"></div>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient </p>
+                    <p>{{review.message}}</p>
                   </div>
-                </li><!-- #comment-## -->
-                <li class="comment">
-                  <div class="comment-body">
-                    <div class="comment-author vcard">
-                      <img class="avatar" src="{% static '../static/img/digital-agency/avatar3.jpg' %}" alt="Author"> 
-                      <span class="cs-medium cs-primary_color">Jhon Doe</span>
-                    </div>
-                    <div class="comment-meta">Jan 24, 2022 at 9:59 am</div>
-                    <div class="cs-review" data-review="5">
-                      <div class="cs-review_in"></div>
-                    </div>
-                    <p>Awesome Theme 🙂</p>
-                  </div>
-                </li><!-- #comment-## -->
+                  {% endfor %}
+                  {% else %}
+                  <p>Şərh yoxdur.</p>
+                  {% endif %}
               </ol>
             </div>
           </div><!-- .cs-tab -->

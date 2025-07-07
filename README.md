@@ -138,4 +138,4 @@ class User(AbstractUser):
 
 43. Django Email Confirmation hazir edilir.
  
-<!-- Template Filter dersine baxdiq sonuncu defe -->
+ <!-- sonuncu defe django classbasedviews 24:13 -->
