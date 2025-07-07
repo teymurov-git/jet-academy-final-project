@@ -136,6 +136,13 @@ class User(AbstractUser):
 
 42. ContactForm,RegisterForm və LoginForm hazır edirik.
 
+<<<<<<< HEAD
 43. Django Email Confirmation hazir edilir.
  
  <!-- sonuncu defe django classbasedviews 24:13 -->
+=======
+43. Django Email Confirmation hazir edirik.
+
+ 44. Pagination və Category/Product filterasiyası düzəldirik.
+<!-- Template Filter dersine baxdiq sonuncu defe -->
+>>>>>>> 2e40aca1d7556925308da0b64052228c82d7a054
