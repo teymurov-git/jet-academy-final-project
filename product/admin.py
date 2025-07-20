@@ -37,3 +37,4 @@ class ProductReviewAdmin(admin.ModelAdmin):
 @admin.register(ProductTag)
 class ProductTagAdmin(admin.ModelAdmin):
     list_display = ['title']
+

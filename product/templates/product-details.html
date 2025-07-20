@@ -82,7 +82,7 @@
                       <img class="avatar" src="{% static '../static/img/digital-agency/avatar2.jpg' %}" alt="Author"> 
                       <span class="cs-medium cs-primary_color">{{review.user}}</span>
                     </div>
-                    <div class="comment-meta">Jan 24, 2022 at 9:59 am</div>
+                    <div class="comment-meta">{{ comment.created_at|date:"M d, Y \\a\\t h:i a" }}</div>
                     <div class="cs-review" data-review="4.5">
                       <div class="cs-review_in"></div>
                     </div>
