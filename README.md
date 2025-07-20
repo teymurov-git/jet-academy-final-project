@@ -143,4 +143,4 @@ class User(AbstractUser):
 
 44. Pagination və Category/Product filterasiyası düzəldirik.
 
- <!-- sonuncu defe django classbasedviews 24:13 -->
+45. Blog və BlogCreate, Slugify düzəldirik
