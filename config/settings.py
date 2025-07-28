@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'core',
     'product',
     'blog',
-    'order'
+    'order',
+     
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

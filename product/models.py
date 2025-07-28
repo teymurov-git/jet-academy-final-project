@@ -8,7 +8,6 @@ User = get_user_model()
 class ProductCategory(AbstractModel):
 
     parent = models.ForeignKey('self', related_name='children', on_delete=models.CASCADE, null=True, blank=True)
-
     title = models.CharField('title', max_length=100)
 
     def __str__(self):
