@@ -9,6 +9,10 @@ class User(AbstractUser):
     phone = models.CharField('phone', max_length=100, null=True, blank=True)
     bio = models.TextField('bio', null=True, blank=True)
     ips = ArrayField(models.GenericIPAddressField(), null=True, blank=True)
+    email = models.EmailField("email address", unique=True)\
+    
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = '',
 
     def __str__(self):
         return self.username

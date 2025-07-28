@@ -17,23 +17,27 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_decode
+from django.contrib.auth.views import LoginView
 
+class UserSignInView(LoginView):
+    template_name = 'signin.html'
+    authentication_form = LoginForm
 
-def signin(request):
-    next = request.GET.get('next', reverse_lazy('home'))
-    form = LoginForm(request.POST or None)
-    if request.method == 'POST':
-        if form.is_valid():
-            user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
-            if user is not None:
-                django_login(request, user)
-                return redirect(next)
-            else:
-                messages.error(request, 'Enter your valid information!')
-        else:
-            messages.error(request, 'Form is not valid!')
-    context = {'form': form}
-    return render(request, 'signin.html', context)
+# def signin(request):
+#     next = request.GET.get('next', reverse_lazy('home'))
+#     form = LoginForm(request.POST or None)
+#     if request.method == 'POST':
+#         if form.is_valid():
+#             user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
+#             if user is not None:
+#                 django_login(request, user)
+#                 return redirect(next)
+#             else:
+#                 messages.error(request, 'Enter your valid information!')
+#         else:
+#             messages.error(request, 'Form is not valid!')
+#     context = {'form': form}
+#     return render(request, 'signin.html', context)
 
 
 def signup(request):
