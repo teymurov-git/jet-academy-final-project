@@ -144,3 +144,5 @@ class User(AbstractUser):
 44. Pagination və Category/Product filterasiyası düzəldirik.
 
 45. Blog və BlogCreate, Slugify düzəldirik
+
+https://documenter.getpostman.com/view/46136545/2sB3B7QEat
