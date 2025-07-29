@@ -153,3 +153,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'teymurluqaqas10@gmail.com'
 EMAIL_HOST_PASSWORD = 'sqbd iidr rqgq jfqx'
 EMAIL_PORT = 587
+
+
+# Celery settings
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"
