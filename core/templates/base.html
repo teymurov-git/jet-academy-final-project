@@ -966,7 +966,7 @@
                 <ul class="menu">
                   {% get_categories as categories %}
                   {% for category in categories %}
-                  <li><a href="#">{{category.title}}</a></li>
+                  <li><a href="{% url 'shop_left_sidebar' %}">{{category.title}}</a></li>
                   {% endfor %}
                   <!-- <li><a href="#">Hand Bag</a></li>
                   <li><a href="#">Furniture</a></li>
@@ -977,7 +977,7 @@
             </div><!-- .col -->
             <div class="col-md-4">
               <div class="cs-footer_item widget_nav_menu">
-                <h2 class="cs-widget_title cs-bold">Company</h2>
+                <h2 class="cs-widget_title cs-bold">Company</h2>  
                 <ul class="menu">
                   <li><a href="#">Privacy policy</a></li>
                   <li><a href="#">Sitemap</a></li>
