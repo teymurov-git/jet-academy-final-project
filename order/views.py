@@ -8,8 +8,8 @@ def checkout(request):
 def empty_cart(request):
     return render(request, 'empty-cart.html')
 
-def my_cart(request):
-    return render(request, 'my-cart.html')
+def cart(request):
+    return render(request, 'cart.html')
 
 def wishlist(request):
-    return render(request, 'wish-list.html')
+    return render(request, 'wishlist.html')

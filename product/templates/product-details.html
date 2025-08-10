@@ -75,23 +75,28 @@
             <div class="cs-product_tab cs-style1 cs-accent_20_bg_2">
               <ol class="comment-list cs-type1">
                 <li class="comment">
-                  {% if review %}
-                  {% for review in reviews %}
+              {% if reviews %}
+              {% for review in reviews %}
                   <div class="comment-body">
                     <div class="comment-author vcard">
-                      <img class="avatar" src="{% static '../static/img/digital-agency/avatar2.jpg' %}" alt="Author"> 
-                      <span class="cs-medium cs-primary_color">{{review.user}}</span>
+                    {% if review.user.photo %}
+                      <img class="avatar" src="{{ review.user.photo.url }}" alt="{{ review.user.username }}">
+                    {% else %}
+                      <img class="avatar" src="{% static 'img/digital-agency/avatar2.jpg' %}" alt="Default avatar">
+                    {% endif %}
+                      <span class="cs-medium cs-primary_color">{{ review.user }}</span>
                     </div>
-                    <div class="comment-meta">{{ comment.created_at|date:"M d, Y \\a\\t h:i a" }}</div>
+                    <div class="comment-meta">{{ review.created_at|date:"M d, Y \\a\\t h:i a" }}</div>
                     <div class="cs-review" data-review="4.5">
                       <div class="cs-review_in"></div>
                     </div>
-                    <p>{{review.message}}</p>
+                    <p>{{ review.message }}</p>
                   </div>
-                  {% endfor %}
-                  {% else %}
-                  <p>Şərh yoxdur.</p>
-                  {% endif %}
+              {% endfor %}
+              {% else %}
+                <p>Şərh yoxdur.</p>
+              {% endif %}
+
               </ol>
             </div>
           </div><!-- .cs-tab -->

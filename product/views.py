@@ -53,4 +53,6 @@ class ProductDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['reviews'] = ProductReview.objects.filter(product = self.get_object())
         return context
-    
+
+
+

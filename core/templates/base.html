@@ -136,60 +136,12 @@
                 <div
                   class="cs-header_category_toggle_in cs-primary_color cs-medium cs-accent_30_bg_2 cs-accent_40_bg_2_hover">
                   <i class="fas fa-align-left"></i>
-                  <span>Shop By Category</span>
-                  <span class="fas fa-angle-down cs-toggle_arrow"></span>
+                  <span>Welcome to Our Shop</span>
                 </div>
               </div>
               <div class="cs-header_category_list cs-white_bg">
                 <ul class="cs-accent_30_bg_2">
-                  <li>
-                    <a href="#" class="cs-header_category_item cs-accent_color_2_hover">
-                      <span class="cs-category_name"><i class="fas fa-caret-right"></i>Apple Watches</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="cs-header_category_item cs-accent_color_2_hover">
-                      <span class="cs-category_name"><i class="fas fa-caret-right"></i>Men's Fashion</span>
-                    </a>
-                  </li>
-                  <li class="cs-has_header_subcategory">
-                    <a href="#" class="cs-header_category_item cs-accent_color_2_hover">
-                      <span class="cs-category_name"><i class="fas fa-caret-right"></i>Electronic Devices</span>
-                    </a>
-                    <span
-                      class="cs-subcategory_toggle cs-center cs-transition_3 cs-accent_20_bg_2_hover cs-accent_color_2_hover"><i
-                        class="fas fa-angle-down"></i></span>
-                    <ul class="cs-accent_30_border_2">
-                      <li><a href="#" class="cs-accent_color_2_hover">Smartphones</a></li>
-                      <li><a href="#" class="cs-accent_color_2_hover">Feature Phone</a></li>
-                      <li><a href="#" class="cs-accent_color_2_hover">Gaming Consoles</a></li>
-                      <li><a href="#" class="cs-accent_color_2_hover">Cameras</a></li>
                     </ul>
-                  </li>
-                  <li>
-                    <a href="#" class="cs-header_category_item cs-accent_color_2_hover">
-                      <span class="cs-category_name"><i class="fas fa-caret-right"></i>Women's Fashion</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="cs-header_category_item cs-accent_color_2_hover">
-                      <span class="cs-category_name"><i class="fas fa-caret-right"></i>Watches & Belt</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="cs-header_category_item cs-accent_color_2_hover">
-                      <span class="cs-category_name"><i class="fas fa-caret-right"></i>Sports & Outdoor</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="cs-header_category_item cs-accent_color_2_hover">
-                      <span class="cs-category_name"><i class="fas fa-caret-right"></i>Groceries & Pets</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="cs-header_category_item cs-accent_color_2_hover">
-                      <span class="cs-category_name"><i class="fas fa-caret-right"></i>Home Appliances</span>
-                    </a>
                   </li>
                 </ul>
               </div>
@@ -470,8 +422,15 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
-                  src="{% static '../static/img/e-commerce/product6.png' %}" alt=""></a>
+            {% if product.slug %}
+              <a href="{% url 'product_details' product.slug %}" class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product6.png' %}" alt="">
+              </a>
+            {% else %}
+              <a class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product6.png' %}" alt="">
+              </a>
+            {% endif %}
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
                   <a href="#"><i class="far fa-heart"></i></a>
@@ -481,7 +440,13 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Black headphone</a></h2>
+            <h2 class="cs-product_title">
+              {% if product.slug %}
+                <a href="{% url 'product_details' product.slug %}">Black headphone</a>
+              {% else %}
+                Black headphone
+              {% endif %}
+            </h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$10.75</div>
                 <a href="#" class="cs-product_btn">
@@ -497,8 +462,15 @@
           <div class="cs-product cs-style1 cs-white_bg">
             <span class="cs-product_badge cs-accent_bg cs-white text-uppercase cs-medium">Sale</span>
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
-                  src="{% static '../static/img/e-commerce/product4.png' %}" alt=""></a>
+            {% if product.slug %}
+              <a href="{% url 'product_details' product.slug %}" class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product4.png' %}" alt="{{ product.name }}">
+              </a>
+            {% else %}
+              <a class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product4.png' %}" alt="{{ product.name }}">
+              </a>
+            {% endif %}
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
                   <a href="#"><i class="far fa-heart"></i></a>
@@ -508,7 +480,13 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Black hand watch</a></h2>
+            <h2 class="cs-product_title">
+              {% if product.slug %}
+                <a href="{% url 'product_details' product.slug %}">Black hand watch</a>
+              {% else %}
+                Black hand watch
+              {% endif %}
+            </h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$20.50</div>
                 <a href="#" class="cs-product_btn">
@@ -523,8 +501,15 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
-                  src="{% static '../static/img/e-commerce/product7.png' %}" alt=""></a>
+            {% if product.slug %}
+              <a href="{% url 'product_details' product.slug %}" class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product7.png' %}" alt="{{ product.name }}">
+              </a>
+            {% else %}
+              <a class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product7.png' %}" alt="{{ product.name }}">
+              </a>
+            {% endif %}
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
                   <a href="#"><i class="far fa-heart"></i></a>
@@ -534,7 +519,13 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Blue wing chair</a></h2>
+            <h2 class="cs-product_title">
+              {% if product.slug %}
+                <a href="{% url 'product_details' product.slug %}">Blue wing chair</a>
+              {% else %}
+                Blue wing chair
+              {% endif %}
+            </h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$30.00</div>
                 <a href="#" class="cs-product_btn">
@@ -549,8 +540,16 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
-                  src="{% static '../static/img/e-commerce/product5.png' %}" alt=""></a>
+            {% if product.slug %}
+              <a href="{% url 'product_details' product.slug %}" class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product5.png' %}" alt="{{ product.name }}">
+              </a>
+            {% else %}
+              <a class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product5.png' %}" alt="{{ product.name }}">
+              </a>
+            {% endif %}
+
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
                   <a href="#"><i class="far fa-heart"></i></a>
@@ -560,7 +559,13 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Hand bag</a></h2>
+            <h2 class="cs-product_title">
+              {% if product.slug %}
+                <a href="{% url 'product_details' product.slug %}">Hand bag</a>
+              {% else %}
+                Hand bag
+              {% endif %}
+            </h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$15.00</div>
                 <a href="#" class="cs-product_btn">
@@ -575,8 +580,15 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
-                  src="{% static '../static/img/e-commerce/product8.png' %}" alt=""></a>
+            {% if product.slug %}
+              <a href="{% url 'product_details' product.slug %}" class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product8.png' %}" alt="{{ product.name }}">
+              </a>
+            {% else %}
+              <a class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product8.png' %}" alt="{{ product.name }}">
+              </a>
+            {% endif %}
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
                   <a href="#"><i class="far fa-heart"></i></a>
@@ -586,7 +598,13 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Black sneaker</a></h2>
+            <h2 class="cs-product_title">
+              {% if product.slug %}
+                <a href="{% url 'product_details' product.slug %}">Black sneaker</a>
+              {% else %}
+                Black sneaker
+              {% endif %}
+            </h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$15.00</div>
                 <a href="#" class="cs-product_btn">
@@ -601,8 +619,15 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
-                  src="{% static '../static/img/e-commerce/product9.png' %}" alt=""></a>
+            {% if product.slug %}
+              <a href="{% url 'product_details' product.slug %}" class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product9.png' %}" alt="{{ product.name }}">
+              </a>
+            {% else %}
+              <a class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product9.png' %}" alt="{{ product.name }}">
+              </a>
+            {% endif %}
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
                   <a href="#"><i class="far fa-heart"></i></a>
@@ -612,7 +637,13 @@
               </div>
             </div>
             <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Hand bag</a></h2>
+            <h2 class="cs-product_title">
+              {% if product.slug %}
+                <a href="{% url 'product_details' product.slug %}">Hand bag</a>
+              {% else %}
+                Hand bag
+              {% endif %}
+            </h2>
               <div class="cs-product_meta">
                 <div class="cs-product_price">$45.00</div>
                 <a href="#" class="cs-product_btn">
@@ -627,8 +658,15 @@
         <div class="col-lg-3 col-sm-6">
           <div class="cs-product cs-style1 cs-white_bg">
             <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
-                  src="{% static '../static/img/e-commerce/product10.png' %}" alt=""></a>
+            {% if product.slug %}
+              <a href="{% url 'product_details' product.slug %}" class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product10.png' %}" alt="{{ product.name }}">
+              </a>
+            {% else %}
+              <a class="cs-product_img cs-center">
+                <img src="{% static 'img/e-commerce/product10.png' %}" alt="{{ product.name }}">
+              </a>
+            {% endif %}
               <div class="cs-product_toolbox cs-white_bg">
                 <div class="cs-product_toolbox_in cs-accent_15_bg_2">
                   <a href="#"><i class="far fa-heart"></i></a>
@@ -637,44 +675,6 @@
                 </div>
               </div>
             </div>
-            <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Yellow wing chair</a></h2>
-              <div class="cs-product_meta">
-                <div class="cs-product_price">$40.00</div>
-                <a href="#" class="cs-product_btn">
-                  <i class="fas fa-cart-plus"></i>
-                  Buy Now
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="cs-height_30 cs-height_lg_30"></div>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <div class="cs-product cs-style1 cs-white_bg">
-            <span class="cs-product_badge cs-accent_bg_2 cs-white text-uppercase cs-medium">New</span>
-            <div class="cs-product_thumb">
-              <a href="{% url 'product_details' %}" class="cs-product_img cs-center"><img
-                  src="{% static '../static/img/e-commerce/product11.png' %}" alt=""></a>
-              <div class="cs-product_toolbox cs-white_bg">
-                <div class="cs-product_toolbox_in cs-accent_15_bg_2">
-                  <a href="#"><i class="far fa-heart"></i></a>
-                  <a href="#"><i class="fas fa-random"></i></a>
-                  <a href="#"><i class="far fa-eye"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="cs-product_info cs-border_color">
-              <h2 class="cs-product_title"><a href="{% url 'product_details' %}">Black hand watch</a></h2>
-              <div class="cs-product_meta">
-                <div class="cs-product_price">$50.00</div>
-                <a href="#" class="cs-product_btn">
-                  <i class="fas fa-cart-plus"></i>
-                  Buy Now
-                </a>
-              </div>
-            </div>
-          </div>
           <div class="cs-height_30 cs-height_lg_30"></div>
         </div>
       </div>
@@ -977,12 +977,11 @@
             </div><!-- .col -->
             <div class="col-md-4">
               <div class="cs-footer_item widget_nav_menu">
-                <h2 class="cs-widget_title cs-bold">Company</h2>  
+                <h2 class="cs-widget_title cs-bold">Pages</h2>  
                 <ul class="menu">
-                  <li><a href="#">Privacy policy</a></li>
-                  <li><a href="#">Sitemap</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Terms & conditions</a></li>
+                  <li><a href="{% url 'shop_left_sidebar' %}">Shop</a></li>
+                  <li><a href="{% url 'blog' %}">Blogs</a></li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
               </div>
             </div><!-- .col -->
@@ -990,8 +989,8 @@
               <div class="cs-footer_item cs-address_widgert">
                 <h2 class="cs-widget_title cs-bold">Follow us</h2>
                 <ul>
-                  <li>youremail@gmail.com</li>
-                  <li>+012 3456 7890</li>
+                  <li>teymurluyusif555@gmail.com</li>
+                  <li>+994 (51) 385 29 69</li>
                 </ul>
               </div>
               <div class="cs-footer_item cs-social_widgert">

@@ -19,7 +19,7 @@
               </div>
             </div>
             <div class="cs-hero_img">
-              <img src="{% static '../static/img/e-commerce/hero_lg_thumb_1.png' %}" alt="">
+              <img src="{% static '../static/imagesss/61ZjlBOprL_oOSraNH.jpg' %}" alt="">
             </div>
           </div>
           <div class="cs-hero cs-style9 cs-center">
@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class="cs-hero_img">
-              <img src="{% static '../static/img/e-commerce/hero_lg_thumb_2.png' %}" alt="">
+              <img src="{% static '../static/imagesss/61ZjlBOprL_oOSraNH.jpg' %}" alt="">
             </div>
           </div>
           <div class="cs-hero cs-style9 cs-center">
@@ -49,7 +49,7 @@
               </div>
             </div>
             <div class="cs-hero_img">
-              <img src="{% static '../static/img/e-commerce/hero_lg_thumb_3.png' %}" alt="">
+              <img src="{% static '../static/imagesss/61ZjlBOprL_oOSraNH.jpg' %}" alt="">
             </div>
           </div>
           <div class="cs-hero cs-style9 cs-center">
@@ -596,46 +596,14 @@
   <!-- Start Blog Post -->
   <div>
     <div class="cs-height_135 cs-height_lg_75"></div>
-    <div class="container wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-      <div class="cs-section_heading cs-style4 cs-size2">
-        <div class="cs-section_heading_left">
-          <div class="cs-section_subtitle">Our blog post</div>
-          <h2 class="cs-section_title cs-bold">Our latest <b class="cs-accent_color_2">articles</b> <br>and <b
-              class="cs-accent_color_2">articles</b></h2>
-        </div>
-        <div class="cs-section_heading_right">
-          <a href="{% url 'blog' %}"
-            class="cs-btn cs-style1 cs-rounded cs-medium cs-primary_font cs-accent_bg cs-accent_border cs-white cs-accent_bg_2_hover cs-white_hover cs-accent_border_2_hover">More
-            Articles</a>
-        </div>
-      </div>
-      <div class="cs-height_80 cs-height_lg_60"></div>
-    </div>
     <div class="container wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
       <div class="row">
         <div class="col-lg-4">
           <div class="cs-post cs-style2">
             {% if blog.pk %}
-            <a href="{% url 'blog_details' blog.pk %}" class="cs-post_thumb">
-              <div class="cs-post_thumb_in cs-bg" data-src="{% static '../static/img/online-education/post1.jpg' %}"></div>
-            </a>
-            {% else %}
-              salam
-            {% endif %}
-            <div class="cs-post_label">
-              <a href="#" class="cs-avatar">
-                <img src="{% static '../static/img/personal-portfolio/avatar1.png' %}" alt="#" class="cs-avatar_img">
-                <div class="cs-avatar_name">Candace Harris</div>
-              </a>
-              <div class="cs-post_date">03 Jan, 2022</div>
-            </div>
-            {% if blog.pk %}
-            <h2 class="cs-post_title"><a href="{% url 'blog_details' %}">Super fast & user friendly interface.</a></h2>
           </div>
           {% else %}
-            <h2 class="cs-post_title"><a href="#">Super fast & user friendly interface.</a></h2>
           {% endif %}
-          <div class="cs-height_30 cs-height_lg_30"></div>
         </div><!-- .col -->
       </div>
     </div>

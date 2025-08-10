@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
   <!-- Start Product -->
   <div class="cs-accent_7_bg_2">
@@ -28,7 +27,7 @@
                   <tr>
                     <td class="cs-accent_15_border_2">
                       <div class="cs-table_product cs-type1">
-                        <div class="cs-product_img"><img src="{% static '../static/img/e-commerce/cart_img1.png' %}" alt="Image"></div>
+                        <div class="cs-product_img"><img src="{% static '../assets/img/e-commerce/cart_img1.png' %}'" alt="Image"></div>
                         <div class="cs-product_right">
                           <a href="#" class="cs-medium cs-primary_color">Black Hand Watch</a>
                           <div class="cs-product_meta">
@@ -52,7 +51,7 @@
                   <tr>
                     <td class="cs-accent_15_border_2">
                       <div class="cs-table_product cs-type1">
-                        <div class="cs-product_img"><img src="{% static '../static/img/e-commerce/cart_img2.png' %}" alt="Image"></div>
+                        <div class="cs-product_img"><img src="{% static '../assets/img/e-commerce/cart_img2.png' %}" alt="Image"></div>
                         <div class="cs-product_right">
                           <a href="#" class="cs-medium cs-primary_color">Black Hand Watch</a>
                           <div class="cs-product_meta">
@@ -129,16 +128,15 @@
 
 {% endblock %}
 
-
 {% block js %}
   <!-- Script -->
-  <script src="{% static '../static/js/plugins/jquery-3.6.0.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/isotope.pkg.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/jquery.slick.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/lightgallery.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/jquery.counter.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/jquery-ui.js' %}"></script>
-  <script src="{% static '../static/js/plugins/select2.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/wow.min.js' %}"></script>
-  <script src="{% static '../static/js/main.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/isotope.pkg.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/jquery.slick.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/lightgallery.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/jquery.counter.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/jquery-ui.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/select2.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/wow.min.js' %}"></script>
+  <script src="{% static '../assets/js/main.js' %}"></script>
 {% endblock %}

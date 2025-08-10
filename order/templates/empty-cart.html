@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
   <!-- Start Product -->
   <div class="cs-accent_7_bg_2">
     <div class="cs-height_130 cs-height_lg_70"></div>
     <div class="container">
       <div class="cs-empty_cart cs-white_bg text-center">
-        <img src="{% static '../static/img/e-commerce/empty_cart.svg' %}" alt="Empty">
+        <img src="{% static '../assets/img/e-commerce/empty_cart.svg' %}" alt="Empty">
         <div class="cs-height_40 cs-height_lg_30"></div>
         <h2 class="cs-semi_bold">Your cart is recently empty</h2>
         <p>Before proceed to checkout you must add some products to your shopping cart. <br>
@@ -21,20 +20,22 @@
   </div>
   <!-- End Product -->
 {% endblock %}
+  
 
 {% block sellof %}
 
 {% endblock %}
 
+
 {% block js %}
   <!-- Script -->
-  <script src="{% static '../static/js/plugins/jquery-3.6.0.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/isotope.pkg.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/jquery.slick.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/lightgallery.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/jquery.counter.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/jquery-ui.js' %}"></script>
-  <script src="{% static '../static/js/plugins/select2.min.js' %}"></script>
-  <script src="{% static '../static/js/plugins/wow.min.js' %}"></script>
-  <script src="{% static '../static/js/main.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/isotope.pkg.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/jquery.slick.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/lightgallery.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/jquery.counter.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/jquery-ui.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/select2.min.js' %}"></script>
+  <script src="{% static '../assets/js/plugins/wow.min.js' %}"></script>
+  <script src="{% static '../assets/js/main.js' %}"></script>
 {% endblock %}
