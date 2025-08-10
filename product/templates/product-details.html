@@ -46,13 +46,37 @@
             </div>
             <div class="cs-height_30 cs-height_lg_30"></div>
             <div class="cs-quantity_wrap">
-              <div class="cs-quantity cs-style1 cs-accent_40_border_2">
-                <button class="cs-quantity_btn cs-center cs-accent_color_2 cs-accent_10_bg_2 cs-white_hover cs-accent_bg_2_hover"><i class="fas fa-minus"></i></button>
-                <input type="text" value="1" class="cs-quantity_number">
-                <button class="cs-quantity_btn cs-center cs-accent_color_2 cs-accent_10_bg_2 cs-white_hover cs-accent_bg_2_hover"><i class="fas fa-plus"></i></button>
-              </div>
-              <a href="#" class="cs-btn cs-style1 cs-rounded cs-medium cs-primary_font cs-accent_bg_2 cs-accent_border_2 cs-white cs-accent_bg_hover cs-white_hover cs-accent_border_hover">Add To Cart</a>
-            </div>
+            <form method="post" action="{% url 'add_to_basket' product.id %}">
+                {% csrf_token %}
+                <div class="cs-quantity cs-style1 cs-accent_40_border_2">
+                    <button type="button" class="cs-quantity_btn decrease cs-center cs-accent_color_2 cs-accent_10_bg_2 cs-white_hover cs-accent_bg_2_hover"><i class="fas fa-minus"></i></button>
+                    <input type="number" name="quantity" value="1" min="1" class="cs-quantity_number">
+                    <button type="button" class="cs-quantity_btn increase cs-center cs-accent_color_2 cs-accent_10_bg_2 cs-white_hover cs-accent_bg_2_hover"><i class="fas fa-plus"></i></button>
+                </div>
+                <button type="submit" class="cs-btn cs-style1 cs-rounded cs-medium cs-primary_font cs-accent_bg_2 cs-accent_border_2 cs-white cs-accent_bg_hover cs-white_hover cs-accent_border_hover">
+                    Səbətə əlavə et
+                </button>
+            </form>
+        </div>
+
+        <script>
+        document.querySelectorAll('.increase').forEach(btn => {
+            btn.addEventListener('click', function() {
+                let input = this.parentElement.querySelector('input');
+                input.value = parseInt(input.value) + 1;
+            });
+        });
+
+        document.querySelectorAll('.decrease').forEach(btn => {
+            btn.addEventListener('click', function() {
+                let input = this.parentElement.querySelector('input');
+                if (parseInt(input.value) > 1) {
+                    input.value = parseInt(input.value) - 1;
+                }
+            });
+        });
+        </script>
+
           </div>
         </div>
       </div>
