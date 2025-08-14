@@ -24,12 +24,13 @@
                   </tr>
                 </thead>
                 <tbody>
+                  {% for item in basket.items.all %}
                   <tr>
                     <td class="cs-accent_15_border_2">
                       <div class="cs-table_product cs-type1">
-                        <div class="cs-product_img"><img src="{% static '../assets/img/e-commerce/cart_img1.png' %}" alt="Image"></div>
+                        <div class="cs-product_img"><img src="{{ item.product.cover_image.url }}" alt="Image"></div>
                         <div class="cs-product_right">
-                          <a href="#" class="cs-medium cs-primary_color">Black Hand Watch</a>
+                          <a href="#" class="cs-medium cs-primary_color">{{item.product.title}}</a>
                           <div class="cs-product_meta">
                             <span class="cs-table_row_close cs-primary_50_color cs-accent_color_hover cs-transition_3"><i class="fas fa-trash-alt"></i></span>
                             <a href="#" class="cs-move_wish cs-primary_50_color">Move to wish list <i class="far fa-heart"></i></a>
@@ -40,38 +41,15 @@
                     <td class="cs-accent_15_border_2">
                       <div class="cs-quantity cs-style1 cs-accent_40_border_2">
                         <button class="cs-quantity_btn cs-center cs-accent_color_2 cs-accent_10_bg_2 cs-white_hover cs-accent_bg_2_hover"><i class="fas fa-minus"></i></button>
-                        <input type="text" value="1" class="cs-quantity_number">
+                        <input type="text" value="{{item.quantity}}" class="cs-quantity_number">
                         <button class="cs-quantity_btn cs-center cs-accent_color_2 cs-accent_10_bg_2 cs-white_hover cs-accent_bg_2_hover"><i class="fas fa-plus"></i></button>
                       </div>
                     </td>
                     <td class="cs-accent_15_border_2 text-end">
-                      $22.00
+                      ${{item.price}}
                     </td>
                   </tr>
-                  <tr>
-                    <td class="cs-accent_15_border_2">
-                      <div class="cs-table_product cs-type1">
-                        <div class="cs-product_img"><img src="{% static '../assets/img/e-commerce/cart_img2.png' %}" alt="Image"></div>
-                        <div class="cs-product_right">
-                          <a href="#" class="cs-medium cs-primary_color">Black Hand Watch</a>
-                          <div class="cs-product_meta">
-                            <span class="cs-table_row_close cs-primary_50_color cs-accent_color_hover cs-transition_3"><i class="fas fa-trash-alt"></i></span>
-                            <a href="#" class="cs-move_wish cs-primary_50_color">Move to wish list <i class="far fa-heart"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="cs-accent_15_border_2">
-                      <div class="cs-quantity cs-style1 cs-accent_40_border_2">
-                        <button class="cs-quantity_btn cs-center cs-accent_color_2 cs-accent_10_bg_2 cs-white_hover cs-accent_bg_2_hover"><i class="fas fa-minus"></i></button>
-                        <input type="text" value="1" class="cs-quantity_number">
-                        <button class="cs-quantity_btn cs-center cs-accent_color_2 cs-accent_10_bg_2 cs-white_hover cs-accent_bg_2_hover"><i class="fas fa-plus"></i></button>
-                      </div>
-                    </td>
-                    <td class="cs-accent_15_border_2 text-end">
-                      $22.00
-                    </td>
-                  </tr>
+                  {% endfor %}
                 </tbody>
               </table>
             </div>
@@ -98,16 +76,10 @@
                 <span>$299.00</span>
               </li>
               <li class="cs-accent_15_border_2">
-                <span>Shipping</span>
-                <span>$0.00</span>
-              </li>
-              <li class="cs-accent_15_border_2">
                 <span>Total</span>
-                <span>$299.00</span>
+                <span>${{basket.total_price}}</span>
               </li>
               <li class="cs-accent_15_border_2">
-                <span>Payable Total</span>
-                <span>$299.00</span>
               </li>
             </ul>
             <div class="text-center">

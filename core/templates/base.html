@@ -23,6 +23,10 @@
   <link rel="stylesheet" href="{% static '../static/css/theme_9.css' %}">
 </head>
 
+	<script>
+		let user = "{{request.user}}"
+	</script>
+  
 <body>
   <!-- Start Preloader -->
   <div class="cs-preloader cs-accent_color_2 cs-white_bg">
@@ -1043,6 +1047,7 @@
   <script src="{% static '../static/js/plugins/jquery.counter.min.js' %}"></script>
   <script src="{% static '../static/js/plugins/wow.min.js' %}"></script>
   <script src="{% static '../static/js/main.js' %}"></script>
+  <script src="{% static '../static/js/cart.js' %}"></script>
   {% endblock %}
 </body>
 </html>
