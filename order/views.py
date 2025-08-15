@@ -27,20 +27,17 @@ def update_item(request):
     productId = data['productId']
     action = data['action']
 
-    product = Product.objects.get(id = productId)
+    product = Product.objects.get(id=productId)
 
-    basket, created = Basket.objects.get_or_create(user = request.user, is_active = True)
-    basketItem, created = BasketItem.objects.get_or_create(basket = basket, product = product)
+    basket, created = Basket.objects.get_or_create(user=request.user, is_active=True)
+    basketItem, created = BasketItem.objects.get_or_create(basket=basket, product=product)
 
     if action == 'add':
-        if not created:
-            basketItem.quantity += 1
-    if action == 'remove':
-        basketItem.quantity -= 1
+        # hər klikdə quantity 1 olaraq qalır
+        basketItem.quantity = 1
+        basketItem.save()
 
-    basketItem.save()
+    elif action == 'remove':
+        basketItem.delete()  # tamamilə silinir
 
-    if basketItem.quantity <= 0:
-        basketItem.delete()
-
-    return JsonResponse('Item was added!', safe=False)
+    return JsonResponse('Item was updated!', safe=False)

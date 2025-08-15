@@ -95,10 +95,53 @@
                   <h2 class="cs-product_title"><a href="#">{{product.title}}</a></h2>
                   <div class="cs-product_meta">
                     <div class="cs-product_price">${{product.price}}</div>
-                    <a href="#" class="cs-product_btn">
-                      <i class="fas fa-cart-plus update-cart"></i>
-                      Buy Now
-                    </a>
+                      <!-- Məhsul düyməsi -->
+                      <a href="#" class="cs-product_btn" data-product-id="{{ product.id }}">
+                        <i class="fas fa-cart-plus update-cart"></i>
+                        Buy Now
+                      </a>
+                      <!-- JS -->
+<script>
+document.querySelectorAll('.cs-product_btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault(); // Linkin normal davranışını dayandırır
+        const productId = this.dataset.productId;
+
+        fetch('/update_item/', {  // backend URL
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken'), // Django CSRF token
+            },
+            body: JSON.stringify({ 'productId': productId, 'action': 'add', 'quantity': 1 }) // quantity = 1
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            alert('Məhsul səbətə əlavə olundu!');
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+});
+
+// CSRF token alma funksiyası Django üçün
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
                   </div>
                 </div> 
               </div>
