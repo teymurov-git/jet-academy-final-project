@@ -22,6 +22,19 @@ def cart(request):
 def wishlist(request):
     return render(request, 'wishlist.html')
 
+from django.shortcuts import redirect
+from product.models import Product
+from .models import Basket, BasketItem
+
+def add_to_basket(request, product_id):
+    product = Product.objects.get(id=product_id)
+    basket, created = Basket.objects.get_or_create(user=request.user, is_active=True)
+    basket_item, created = BasketItem.objects.get_or_create(basket=basket, product=product)
+    basket_item.quantity += int(request.POST.get('quantity', 1))
+    basket_item.save()
+    return redirect('my_cart')  # Cart səhifəsinə yönləndirmək
+
+
 def update_item(request):
     data = json.loads(request.body)
     productId = data['productId']
